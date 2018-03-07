@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlatformObject : MonoBehaviour {
 
 	[SerializeField] private float objectSpeed = 1.0f;
-	private float resetPosition = -29.5f;
-	private float startPosition = 42.62f;
+	[SerializeField] private float resetPosition = -29.5f;
+	[SerializeField] private float startPosition = 42.62f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class PlatformObject : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void Update () {
 		transform.Translate(Vector3.left * (objectSpeed * Time.deltaTime));
 
 		if (transform.localPosition.x < resetPosition) {
