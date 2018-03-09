@@ -15,11 +15,13 @@ public class PlatformObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-		transform.Translate(Vector3.left * (objectSpeed * Time.deltaTime));
+		if (!GameManager.instance.GameOver) {
+			transform.Translate (Vector3.left * (objectSpeed * Time.deltaTime));
 
-		if (transform.localPosition.x < resetPosition) {
-			Vector3 newPosition = new Vector3 (startPosition, transform.localPosition.y, transform.localPosition.z);
-			transform.position = newPosition;
+			if (transform.localPosition.x < resetPosition) {
+				Vector3 newPosition = new Vector3 (startPosition, transform.localPosition.y, transform.localPosition.z);
+				transform.position = newPosition;
+			}
 		}
 	}
 }
