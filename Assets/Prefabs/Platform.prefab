@@ -52,9 +52,10 @@ GameObject:
   - component: {fileID: 33401699675104538}
   - component: {fileID: 23843252914652384}
   - component: {fileID: 95661363470110540}
+  - component: {fileID: 65981086474566110}
   m_Layer: 0
   m_Name: module_tile_02_bd
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,9 +71,10 @@ GameObject:
   - component: {fileID: 33985848991412804}
   - component: {fileID: 23019292747220540}
   - component: {fileID: 95103875199475166}
+  - component: {fileID: 65037677165948786}
   m_Layer: 0
   m_Name: module_tile_02_bd
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,9 +90,10 @@ GameObject:
   - component: {fileID: 33609802390794132}
   - component: {fileID: 23046214572270928}
   - component: {fileID: 95576813989035186}
+  - component: {fileID: 65097039530134926}
   m_Layer: 0
   m_Name: stone_bridge (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,9 +109,10 @@ GameObject:
   - component: {fileID: 33396179819389422}
   - component: {fileID: 23619827590820032}
   - component: {fileID: 95108544616016980}
+  - component: {fileID: 65970715134075080}
   m_Layer: 0
   m_Name: stone_bridge
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +130,7 @@ GameObject:
   - component: {fileID: 95165063314129698}
   m_Layer: 0
   m_Name: module_tile_02_bd (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +143,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4469981340916918}
+  - component: {fileID: 114058835894637666}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +164,7 @@ GameObject:
   - component: {fileID: 95495628150389504}
   m_Layer: 0
   m_Name: module_tile_02_bd (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771755980767248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6945722, y: 14.034224, z: 8.39}
+  m_LocalPosition: {x: 4.7, y: 14.034224, z: 8.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4658577916109824}
@@ -535,6 +540,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702341204867634}
   m_Mesh: {fileID: 4300000, guid: da7543ca8a4604117a32d03c551fd8d3, type: 3}
+--- !u!65 &65037677165948786
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702341204867634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.542564, y: 1.6237036, z: 6.000011}
+  m_Center: {x: 2.2278156, y: -0.7469838, z: 1.7793107e-11}
+--- !u!65 &65097039530134926
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727175101602920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1152897, y: 2.912122, z: 4.4694495}
+  m_Center: {x: 0.13353443, y: -0.48208144, z: -0.00000047683713}
+--- !u!65 &65970715134075080
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1764286591318016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.905015, y: 2.6316884, z: 4.4694495}
+  m_Center: {x: 0.063660145, y: -0.62229824, z: -0.00000047683716}
+--- !u!65 &65981086474566110
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645175253967024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.462025, y: 2.0548358, z: 6.000011}
+  m_Center: {x: 2.3218613, y: -0.96255016, z: 9.85452e-12}
 --- !u!95 &95103875199475166
 Animator:
   serializedVersion: 3
@@ -637,3 +690,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114058835894637666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771755980767248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b6cbb1dc62740d9b0cc49c36919ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSpeed: 5
+  resetPosition: -29.5
+  startPosition: 42.62
