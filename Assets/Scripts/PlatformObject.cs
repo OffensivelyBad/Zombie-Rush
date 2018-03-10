@@ -16,7 +16,8 @@ public class PlatformObject : MonoBehaviour {
 	// Update is called once per frame
 	protected virtual void Update () {
 		if (!GameManager.instance.GameOver) {
-			transform.Translate (Vector3.left * (objectSpeed * Time.deltaTime));
+			transform.Translate (Vector3.left * (objectSpeed * Time.deltaTime), Space.World);
+//			transform.Translate(movementX, 0, 0, Space.World)
 
 			if (transform.localPosition.x < resetPosition) {
 				Vector3 newPosition = new Vector3 (startPosition, transform.localPosition.y, transform.localPosition.z);

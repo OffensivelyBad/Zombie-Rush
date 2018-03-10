@@ -16,6 +16,7 @@ public class Rock : PlatformObject {
 	protected override void Update ()
 	{
 		if (GameManager.instance.PlayerActive) {
+			transform.Rotate (0, 50 * Time.deltaTime, 0);
 			base.Update ();
 		}
 	}
