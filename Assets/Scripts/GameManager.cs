@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+	// Game objects
+	[SerializeField] private List<PlatformObject> gameElements;
+	[SerializeField] private Player player;
+
 	[SerializeField] private GameObject mainMenu;
 	[SerializeField] private Text scoreText;
-	[SerializeField] private Player player;
+	[SerializeField] private AudioClip sfxScore;
+	private AudioSource audioSource;
 	public static GameManager instance = null;
 	private bool gameOver = false;
 	private bool playerActive = false;
@@ -47,11 +52,13 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		Assert.IsNotNull (mainMenu);
+		Assert.IsNotNull (sfxScore);
 	}
 
 	// Use this for initialization
 	void Start () {
 		Points = 0;
+		audioSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -78,10 +85,17 @@ public class GameManager : MonoBehaviour {
 		gameStarted = false;
 		gameOver = false;
 		playerActive = false;
+
+		// Reset the positions of the objects
 		player.ResetToStartPosition ();
+		for (int i = 0; i < gameElements.Count; i++) {
+			PlatformObject element = gameElements [i];
+			element.ResetToInitialPosition ();
+		}
 	}
 
 	public void ScoredPoint() {
 		Points += 1;
+		audioSource.PlayOneShot (sfxScore);
 	}
 }

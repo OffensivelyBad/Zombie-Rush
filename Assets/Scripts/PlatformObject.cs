@@ -7,6 +7,8 @@ public class PlatformObject : MonoBehaviour {
 	[SerializeField] private float objectSpeed = 1.0f;
 	[SerializeField] private float resetPosition = -29.5f;
 	[SerializeField] private float startPosition = 42.62f;
+	[SerializeField] private float initialPosition = 0.0f;
+	private float offset = 7f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,5 +33,9 @@ public class PlatformObject : MonoBehaviour {
 
 	public void ResetObject() {
 		ResetPosition ();
+	}
+
+	public void ResetToInitialPosition() {
+		transform.position = new Vector3 (initialPosition + offset, transform.position.y, transform.position.z);
 	}
 }
