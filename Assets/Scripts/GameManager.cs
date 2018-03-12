@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
 	[SerializeField] private GameObject mainMenu;
+	[SerializeField] private Text scoreText;
+	[SerializeField] private Player player;
 	public static GameManager instance = null;
 	private bool gameOver = false;
 	private bool playerActive = false;
@@ -20,9 +23,18 @@ public class GameManager : MonoBehaviour {
 	}
 	public bool GameStarted {
 		get { return gameStarted; }
+		set {
+			if (value) {
+				Points = 0;
+			}
+		}
 	}
 	public int Points {
 		get { return points; }
+		set {
+			points = value;
+			scoreText.text = "Score: " + points;
+		}
 	}
 
 	void Awake() {
@@ -39,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Points = 0;
 	}
 	
 	// Update is called once per frame
@@ -58,10 +70,18 @@ public class GameManager : MonoBehaviour {
 	public void StartGame() {
 		mainMenu.SetActive (false);
 		gameStarted = true;
+		Points = 0;
+	}
+
+	public void RestartGame() {
+		mainMenu.SetActive (true);
+		gameStarted = false;
+		gameOver = false;
+		playerActive = false;
+		player.ResetToStartPosition ();
 	}
 
 	public void ScoredPoint() {
-		points += 1;
-		print (points);
+		Points += 1;
 	}
 }

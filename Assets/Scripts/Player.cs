@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private AudioClip sfxJump;
 	[SerializeField] private AudioClip sfxDeath;
 	[SerializeField] private float jumpForce = 120f;
+	[SerializeField] private Vector3 startingPosition;
 	private Animator anim;
 	private Rigidbody rigidBody;
 	private bool jump;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		rigidBody = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource> ();
+		ResetToStartPosition ();
 	}
 	
 	// Update is called once per frame
@@ -30,12 +32,16 @@ public class Player : MonoBehaviour {
 
 		if (!GameManager.instance.GameOver && GameManager.instance.GameStarted) {
 			if (Input.GetMouseButtonDown (0)) {
-				GameManager.instance.PlayerStartedGame ();
+				if (!GameManager.instance.PlayerActive) {
+					GameManager.instance.PlayerStartedGame ();
+				}
 				anim.Play ("Jump");
 				audioSource.PlayOneShot (sfxJump);
 				rigidBody.useGravity = true;
 				jump = true;
 			}
+		} else if (GameManager.instance.GameOver && Input.GetMouseButtonDown(0) ) {
+			GameManager.instance.RestartGame ();
 		}
 
 	}
@@ -66,6 +72,15 @@ public class Player : MonoBehaviour {
 			rigidBody.detectCollisions = false;
 			audioSource.PlayOneShot (sfxDeath);
 		} 
+	}
+
+	public void ResetToStartPosition() {
+		rigidBody.useGravity = false;
+		rigidBody.velocity = Vector3.zero;
+		rigidBody.angularVelocity = Vector3.zero;
+		rigidBody.Sleep ();
+		rigidBody.detectCollisions = true;
+		transform.localPosition = startingPosition;
 	}
 
 }
