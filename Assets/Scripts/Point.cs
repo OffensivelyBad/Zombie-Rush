@@ -9,4 +9,11 @@ public class Point : PlatformObject {
 			base.Update ();
 		}
 	}
+
+	void OnTriggerEnter(Collider collider) {
+		if (collider.gameObject.tag == "player") {
+			GameManager.instance.ScoredPoint ();
+			ResetObject ();
+		}
+	}
 }

@@ -65,10 +65,7 @@ public class Player : MonoBehaviour {
 			rigidBody.AddForce (new Vector2 (-75, 500), ForceMode.Impulse);
 			rigidBody.detectCollisions = false;
 			audioSource.PlayOneShot (sfxDeath);
-		} else if (collision.gameObject.tag == "point") {
-			GameManager.instance.ScoredPoint ();
-			//TODO: remove the point
-		}
+		} 
 	}
 
 }

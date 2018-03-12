@@ -17,12 +17,19 @@ public class PlatformObject : MonoBehaviour {
 	protected virtual void Update () {
 		if (!GameManager.instance.GameOver) {
 			transform.Translate (Vector3.left * (objectSpeed * Time.deltaTime), Space.World);
-//			transform.Translate(movementX, 0, 0, Space.World)
 
 			if (transform.localPosition.x < resetPosition) {
-				Vector3 newPosition = new Vector3 (startPosition, transform.localPosition.y, transform.localPosition.z);
-				transform.position = newPosition;
+				ResetPosition ();
 			}
 		}
+	}
+
+	protected virtual void ResetPosition() {
+		Vector3 newPosition = new Vector3 (startPosition, transform.position.y, transform.position.z);
+		transform.position = newPosition;
+	}
+
+	public void ResetObject() {
+		ResetPosition ();
 	}
 }

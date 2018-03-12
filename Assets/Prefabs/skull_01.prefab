@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23288564386232194}
   - component: {fileID: 95480685162258856}
   - component: {fileID: 114201647678367986}
+  - component: {fileID: 135551713997644144}
   m_Layer: 0
   m_Name: skull_01
   m_TagString: point
@@ -115,3 +116,15 @@ MonoBehaviour:
   objectSpeed: 5
   resetPosition: -12.375
   startPosition: 26.235
+--- !u!135 &135551713997644144
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048517443685334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15226714
+  m_Center: {x: 0.01200671, y: 0.13, z: -0.04}
