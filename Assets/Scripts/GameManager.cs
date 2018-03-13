@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Points = 0;
+		scoreText.text = "";
 		audioSource = GetComponent<AudioSource> ();
 	}
 	
@@ -87,11 +88,11 @@ public class GameManager : MonoBehaviour {
 		playerActive = false;
 
 		// Reset the positions of the objects
-		player.ResetToStartPosition ();
 		for (int i = 0; i < gameElements.Count; i++) {
 			PlatformObject element = gameElements [i];
 			element.ResetToInitialPosition ();
 		}
+		player.ResetToStartPosition ();
 	}
 
 	public void ScoredPoint() {
