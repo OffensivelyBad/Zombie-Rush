@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Rock : PlatformObject {
 
-	[SerializeField] private Vector3 topPosition;
-	[SerializeField] private Vector3 bottomPosition;
+    [SerializeField] private Vector3 topPosition = Vector3.zero;
+    [SerializeField] private Vector3 bottomPosition = Vector3.zero;
 	[SerializeField] private float speed = 1.0f;
 
 	// Use this for initialization

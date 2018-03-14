@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	// Game objects
-	[SerializeField] private List<PlatformObject> gameElements;
-	[SerializeField] private Player player;
+    [SerializeField] private List<PlatformObject> gameElements = null;
+	[SerializeField] private Player player = null;
 
-	[SerializeField] private GameObject mainMenu;
-	[SerializeField] private Text scoreText;
-	[SerializeField] private AudioClip sfxScore;
+	[SerializeField] private GameObject mainMenu = null;
+	[SerializeField] private Text scoreText = null;
+	[SerializeField] private AudioClip sfxScore = null;
 	private AudioSource audioSource;
 	public static GameManager instance = null;
 	private bool gameOver = false;

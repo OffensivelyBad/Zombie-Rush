@@ -5,10 +5,10 @@ using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour {
 
-	[SerializeField] private AudioClip sfxJump;
-	[SerializeField] private AudioClip sfxDeath;
+    [SerializeField] private AudioClip sfxJump = null;
+    [SerializeField] private AudioClip sfxDeath = null;
 	[SerializeField] private float jumpForce = 120f;
-	[SerializeField] private Vector3 startingPosition;
+    [SerializeField] private Vector3 startingPosition = Vector3.zero;
 	private Animator anim;
 	private Rigidbody rigidBody;
 	private bool jump;
